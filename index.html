@@ -850,6 +850,13 @@
 </style>
 </head>
 <body>
+  <div id="login">
+    <h2>Enter Password</h2>
+    <input type="password" id="pw" placeholder="Password" />
+    <button onclick="check()">Enter</button>
+  </div>
+
+  <div id="app" style="display:none;">
 
 <!-- ============== TOPBAR ============== -->
 <header class="topbar">
@@ -2222,5 +2229,18 @@ function sendMessage() {
 applyPortfolioPeriod('mtd');
 applyPropertyPeriod('mtd');
 </script>
+  </div>
+
+  <script>
+    function check() {
+      const pw = document.getElementById("pw").value;
+      if (pw === "hotel123") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("app").style.display = "block";
+      } else {
+        alert("Incorrect password");
+      }
+    }
+  </script>
 </body>
 </html>
